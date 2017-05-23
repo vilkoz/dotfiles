@@ -63,3 +63,4 @@ function! Multiple_cursors_after()
 endfunction
 
 hi SpecialKey ctermfg=black
+set hlsearch
