@@ -64,3 +64,5 @@ endfunction
 
 hi SpecialKey ctermfg=black
 set hlsearch
+
+nnoremap ; :
