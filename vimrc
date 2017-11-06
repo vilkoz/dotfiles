@@ -62,6 +62,11 @@ let g:ale_c_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes'
 "" show invisibles
 set listchars=eol:¬,tab:>_,trail:~,extends:>,precedes:<,space:␣
 set list
+hi SpecialKey ctermfg=black
+hi NonText ctermfg=black
+hi EndOfBuffer ctermfg=black
+
+set backspace=2
 
 " Called once right before you start selecting multiple cursors
 function! Multiple_cursors_before()
@@ -77,7 +82,6 @@ function! Multiple_cursors_after()
 	endif
 endfunction
 
-hi SpecialKey ctermfg=black
 set hlsearch
 
 nnoremap ; :
