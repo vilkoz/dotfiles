@@ -1,0 +1,44 @@
+priority -1
+snippet cl "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+	public:
+		${1/(\w+).*/$1/} (void);
+		${1/(\w+).*/$1/} (${1/(\w+).*/$1/} const &copy);
+		${1/(\w+).*/$1/} (${2:arguments});
+		virtual ~${1/(\w+).*/$1/} ();
+		${1/(\w+).*/$1/}			operator=(${1/(\w+).*/$1/} const &copy);
+
+	private:
+		${0:/* data */}
+};
+endsnippet
+
+priority -1
+snippet copl "copliens class source .. (class)"
+#include "${1:`!p snip.rv = snip.basename or "name"`}.hpp"
+
+${1/(\w+).*/$1/}::${1/(\w+).*/$1/}(void)
+{
+}
+
+${1/(\w+).*/$1/}::~${1/(\w+).*/$1/}(void)
+{
+}
+
+${1/(\w+).*/$1/}::${1/(\w+).*/$1/} (${1/(\w+).*/$1/} const &copy)
+{
+	*this = copy;
+}
+
+${1/(\w+).*/$1/}			${1/(\w+).*/$1/}::operator=(${1/(\w+).*/$1/} const &copy)
+{
+	(void)copy;
+	return (*this);
+}
+
+${1/(\w+).*/$1/}::${1/(\w+).*/$1/}(${2:arguments})
+{
+	${0:/* real constructor */}
+}
+endsnippet
