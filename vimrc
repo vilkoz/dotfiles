@@ -38,6 +38,7 @@ set path+=**
 
 " Display all matching files when we tab complete
 set wildmenu
+set laststatus=2
 
 set cc=80
 

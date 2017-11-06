@@ -52,6 +52,11 @@ function! nerdtree#completeBookmarks(A,L,P)
     return filter(g:NERDTreeBookmark.BookmarkNames(), 'v:val =~# "^' . a:A . '"')
 endfunction
 
+"FUNCTION: nerdtree#compareBookmarks(dir) {{{2
+function! nerdtree#compareBookmarks(first, second)
+    return a:first.compareTo(a:second)
+endfunction
+
 "FUNCTION: nerdtree#compareNodes(dir) {{{2
 function! nerdtree#compareNodes(n1, n2)
     return a:n1.path.compareTo(a:n2.path)
@@ -84,12 +89,10 @@ function! nerdtree#deprecated(func, ...)
 endfunction
 
 " FUNCTION: nerdtree#exec(cmd) {{{2
-" Same as :exec cmd but with eventignore set for the duration
-" to disable the autocommands used by NERDTree (BufEnter,
-" BufLeave and VimEnter)
+" same as :exec cmd  but eventignore=all is set for the duration
 function! nerdtree#exec(cmd)
     let old_ei = &ei
-    set ei=BufEnter,BufLeave,VimEnter
+    set ei=all
     exec a:cmd
     let &ei = old_ei
 endfunction
