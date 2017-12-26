@@ -12,6 +12,8 @@ Plug 'drmikehenry/vim-headerguard'
 Plug 'Shougo/neocomplete.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
@@ -57,6 +59,8 @@ endif
 let g:ale_linters = {'h': 'gcc', 'c': 'gcc'}
 let g:ale_c_gcc_options = '-Wall -Wextra -Werror -I../includes -I./includes -I include'
 let g:ale_c_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes'
+let g:ale_cpp_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
+let g:ale_cpp_clangcheck_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
 ""}} ALE
 
 "" show invisibles
@@ -65,6 +69,9 @@ set list
 hi SpecialKey ctermfg=black
 hi NonText ctermfg=black
 hi EndOfBuffer ctermfg=black
+hi SpecialKey guifg=black
+hi NonText guifg=black
+hi EndOfBuffer guifg=black
 
 set backspace=2
 
@@ -113,3 +120,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 "" }}
+
+"" Markdown
+let g:vim_markdown_folding_disabled = 1
