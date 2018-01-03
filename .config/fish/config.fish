@@ -62,3 +62,6 @@ alias adb="~/.buildozer/android/platform/android-sdk-20/platform-tools/adb"
 alias getsploit="~/Downloads/getsploit/getsploit.py"
 alias fpush="git add -u; git commit -m fast_push; git push"
 alias copy="tmux show-buffer | xclip -selection clipboard"
+function find_string
+	find ./ -type f -exec grep -H -n --color=auto $argv[1] \{\} \;
+end
