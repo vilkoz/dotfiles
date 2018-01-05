@@ -14,6 +14,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
