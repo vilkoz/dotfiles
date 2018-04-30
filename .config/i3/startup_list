@@ -2,3 +2,5 @@ compton
 redshift
 dropbox
 telegram-desktop
+terminator
+feh --bg-scale /home/vrybalko/Pictures/yos.jpg

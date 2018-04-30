@@ -30,12 +30,12 @@ set $term terminator
 set $lockscreen slock
 
 #Needed for i3-gaps
-hide_edge_borders both
-for_window [class="^.*"] border pixel 1
-set $gapsinner 10
-set $gapsouter 0
-gaps inner $gapsinner
-gaps outer $gapsouter
+#hide_edge_borders both
+#for_window [class="^.*"] border pixel 1
+#set $gapsinner 10
+#set $gapsouter 0
+#gaps inner $gapsinner
+#gaps outer $gapsouter
 
 # startup shit
 
@@ -60,7 +60,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -e tmux
 
 # screenshot stuff
-bindsym Shift+Print exec gnome-screenshot -a
+bindsym Shift+Print exec gnome-screenshot -a -i
 bindsym Print exec gnome-screenshot
 
 # kill focused window
@@ -73,6 +73,7 @@ bindsym  Ctrl+Shift+Delete exec $lockscreen
 bindsym $mod+d exec dmenu_run
 bindsym $mod+q exec qutebrowser
 bindsym $mod+r 		exec $term -e ranger
+bindsym $mod+t 		exec $term -e tmux
 bindsym $mod+i 		exec $term -e htop
 
 # resize
@@ -83,12 +84,12 @@ bindsym $mod+Shift+i	resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+o	resize grow width 10 px or 10 ppt
 
 #gaps
-bindsym $mod+Shift+t	gaps inner all set $gapsinner; gaps outer all set $gapsouter
-bindsym $mod+s		gaps inner current plus 5
-bindsym $mod+Shift+s	gaps inner current minus 5
+#bindsym $mod+Shift+t	gaps inner all set $gapsinner; gaps outer all set $gapsouter
+#bindsym $mod+s		gaps inner current plus 5
+#bindsym $mod+Shift+s	gaps inner current minus 5
 
-bindsym $mod+z		gaps outer current plus 5
-bindsym $mod+Shift+z	gaps outer current minus 5
+#bindsym $mod+z		gaps outer current plus 5
+#bindsym $mod+Shift+z	gaps outer current minus 5
 
 #pulse audio mixer
 
@@ -139,10 +140,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+g focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -268,7 +269,8 @@ bindsym $mod+Pause mode "$mode_system"
 #set		$inactive-text-color	#676e7d
 #set		$urgent-bg-color		#e53935
 
-set		$bg-color				#1a1a1e
+# set		$bg-color				#1a1a1e
+set		$bg-color				#10eadf
 set		$inactive-bg-color		#2a2a2e
 set		$text-color				#f3f4f5
 #set		$inactive-text-color	#676e7d

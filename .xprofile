@@ -1,8 +1,8 @@
-setxkbmap -layout us,ru -option grp:shift_caps_switch &
 xset r rate 200 30 &
-xbindkeys &
-[ ! -s ~/.config/mpd/pid ] && mpd .config/mpd/mpd.conf &
 export TERMINAL=terminator &
 redshift -l 50.455:30.377 &
-not-compton &
-
+compton -bcGf --backend glx --vsync opengl-swc -i 0.9 -e 0.7 --no-fading-openclose &
+xset +fp /home/vrybalko/.fonts &
+xset fp rehash &
+xrandr --output HDMI3 --auto --left-of DP2 &
+setxkbmap -layout us,ru -option grp:win_space_toggle &

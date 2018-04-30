@@ -15,6 +15,9 @@ Plug 'honza/vim-snippets'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'airblade/vim-gitgutter'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'tikhomirov/vim-glsl'
+Plug 'kovetskiy/vim-bash'
 
 call plug#end()
 
@@ -57,7 +60,8 @@ endif
 "" }}
 
 "" {{ ALE
-let g:ale_linters = {'h': 'gcc', 'c': 'gcc'}
+autocmd BufNewFile,BufRead *.h :set filetype=c
+let g:ale_linters = {'c': 'gcc'}
 let g:ale_c_gcc_options = '-Wall -Wextra -Werror -I../includes -I./includes -I include'
 let g:ale_c_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes'
 let g:ale_cpp_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
