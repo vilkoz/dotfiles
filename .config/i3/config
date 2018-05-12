@@ -57,7 +57,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term -e tmux
+#bindsym $mod+Shift+Return exec $term -e tmux
 
 # screenshot stuff
 bindsym Shift+Print exec gnome-screenshot -a
@@ -107,10 +107,16 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
+bindsym $mod+Left exec xdotool mousemove_relative -- -15 0
+bindsym $mod+Right exec xdotool mousemove_relative -- 15 0
+bindsym $mod+Up exec xdotool mousemove_relative -- 0 -15
+bindsym $mod+Down exec xdotool mousemove_relative -- 0 15
+bindsym $mod+backslash exec xdotool click 1
+bindsym $mod+bar exec xdotool click 2
 
 # move focused window
 bindsym $mod+Shift+h move left 30
