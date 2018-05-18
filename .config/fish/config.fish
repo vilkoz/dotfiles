@@ -29,7 +29,7 @@ export IRCSERVER=irc.freenode.net
 export USER=vrybalko
 export MAIL=vrybalko@student.unit.ua
 # default gui browser for mutt
-export BROWSER=chromium
+export BROWSER=firefox
 
 # some more ls aliases
 alias ll='ls -alF'
