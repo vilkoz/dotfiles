@@ -1,8 +1,6 @@
-setxkbmap -layout us,ru -option grp:shift_caps_switch &
+setxkbmap -layout us,ru -option grp:win_space_toggle &
 xset r rate 200 30 &
 xbindkeys &
 [ ! -s ~/.config/mpd/pid ] && mpd .config/mpd/mpd.conf &
 export TERMINAL=terminator &
-redshift -l 50.455:30.377 &
-not-compton &
-
+compton &
