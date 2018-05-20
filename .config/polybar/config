@@ -22,7 +22,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/example]
-;monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:eDP1}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -58,7 +58,7 @@ font-2 = fontawesome:pixelsize=10;1
 ;modules-left = bspwm i3
 modules-left = i3
 modules-center = mpd xwindow
-modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = xkeyboard filesystem xbacklight volume memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 5
@@ -163,15 +163,16 @@ format = <label> <bar>
 label = BL
 
 bar-width = 10
-bar-indicator = |
+bar-indicator = █
 bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+bar-indicator-font = 5
+bar-fill = █
+bar-fill-font = 5
+bar-fill-foreground = ${colors.primary}
+bar-empty = █
+bar-empty-font = 5
+bar-empty-foreground = #44
+format-underline = ${colors.primary}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -292,6 +293,8 @@ bar-volume-empty = █
 bar-volume-empty-font = 5
 bar-volume-empty-foreground = #44
 
+format-underline = ${colors.primary}
+
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -329,8 +332,8 @@ format-underline = ${colors.primary}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 

@@ -15,11 +15,12 @@ Plug 'honza/vim-snippets'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'airblade/vim-gitgutter'
+Plug 'tikhomirov/vim-glsl'
 
 call plug#end()
 
 map <C-x> :NERDTreeToggle<CR>
-map <f5> :make -C ../ f<CR>
+map <f5> :make<CR>
 filetype plugin indent on
 set tabstop=4
 set noexpandtab
@@ -57,11 +58,12 @@ endif
 "" }}
 
 "" {{ ALE
-let g:ale_linters = {'h': 'gcc', 'c': 'gcc'}
-let g:ale_c_gcc_options = '-Wall -Wextra -Werror -I../includes -I./includes -I include'
-let g:ale_c_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes'
-let g:ale_cpp_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
-let g:ale_cpp_clangcheck_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
+"let g:ale_linters = {'h': 'gcc', 'c': 'gcc'}
+" let g:ale_asm_gcc_options = '-Wall -fPIC -m64'
+let g:ale_c_gcc_options = '-Wall -Wextra -Werror -I../includes -I./includes -I include -I libft'
+let g:ale_c_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -I libft'
+" let g:ale_cpp_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
+" let g:ale_cpp_clangcheck_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
 ""}} ALE
 
 "" show invisibles
@@ -92,7 +94,9 @@ endfunction
 
 set hlsearch
 
-nnoremap ; :
+" nnoremap ; :
+nnoremap J gt
+nnoremap K gT
 set clipboard=unnamedplus
 
 "" {{ HEADER_GUARD

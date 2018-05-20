@@ -3,4 +3,4 @@ xset r rate 200 30 &
 xbindkeys &
 [ ! -s ~/.config/mpd/pid ] && mpd .config/mpd/mpd.conf &
 export TERMINAL=terminator &
-compton &
+libinput-gestures-setup start &

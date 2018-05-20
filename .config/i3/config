@@ -190,6 +190,11 @@ bindsym $mod+b exec --no-startup-id fish ~/.config/i3/start_polybar.fish
 
 bindsym	$mod+Shift+m exec enable_ua
 
+# for libinput-gestures
+
+bindsym Mod1+Ctrl+Left workspace prev
+bindsym Mod1+Ctrl+Right workspace next
+
 #	window colors
 
 #set		$bg-color				#10eadf
