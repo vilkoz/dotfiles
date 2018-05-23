@@ -27,7 +27,7 @@ font pango:monospace 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 set $term terminator
-set $lockscreen slock
+set $lockscreen ~/.scripts/lockscreen.sh
 
 #Needed for i3-gaps
 #hide_edge_borders both
@@ -67,13 +67,13 @@ bindsym Print exec gnome-screenshot
 bindsym $mod+x kill
 
 # lock 
-bindsym  Ctrl+Shift+Delete exec $lockscreen
+bindsym  Ctrl+Shift+Delete workspace 1; workspace 8; workspace 2; workspace 9; exec $lockscreen
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 bindsym $mod+q exec qutebrowser
 bindsym $mod+r 		exec $term -e ranger
-bindsym $mod+t 		exec $term -e tmux
+#bindsym $mod+t 		exec $term -e tmux
 bindsym $mod+i 		exec $term -e htop
 
 # resize
@@ -136,7 +136,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -162,6 +162,8 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+
+bindsym $mod+w workspace 1; workspace 4;
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1

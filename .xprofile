@@ -1,8 +1,9 @@
 xset r rate 200 30 &
 export TERMINAL=terminator &
 redshift -l 50.455:30.377 &
-compton -bcGf --backend glx --vsync opengl-swc -i 0.9 -e 0.7 --no-fading-openclose &
+#unagi &
 xset +fp /home/vrybalko/.fonts &
 xset fp rehash &
 xrandr --output HDMI3 --auto --left-of DP2 &
 setxkbmap -layout us,ru -option grp:win_space_toggle &
+compton -bcGf --backend glx --vsync opengl-swc -i 0.9 -e 0.7 --no-fading-openclose &
