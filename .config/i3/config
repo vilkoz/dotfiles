@@ -59,7 +59,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -e tmux
 
 # screenshot stuff
-bindsym Shift+Print exec gnome-screenshot -a
+bindsym Shift+Print exec gnome-screenshot -a -i
 bindsym Print exec gnome-screenshot
 
 # kill focused window
