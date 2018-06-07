@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo ~/.scripts/connect_home_wifi
+~/.scripts/enable_external_monitor

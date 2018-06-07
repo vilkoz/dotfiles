@@ -65,3 +65,5 @@ alias copy="tmux show-buffer | xclip -selection clipboard"
 function find_string
 	find ./ -type f -exec grep -H -n --color=auto $argv[1] \{\} \;
 end
+
+set -U fish_user_paths $fish_user_paths ~/.scripts
