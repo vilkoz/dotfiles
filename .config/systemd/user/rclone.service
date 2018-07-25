@@ -1,0 +1,10 @@
+[Unit]
+Description=Gdrive Fuse Mount Service
+
+[Service]
+ExecStart=/usr/bin/rclone mount gdrive: /home/vrybalko/gdrive --allow-non-empty --vfs-cache-mode writes 
+PIDFile=/var/run/rclone_service.pid
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
