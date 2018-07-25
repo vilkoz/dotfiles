@@ -10,7 +10,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'drmikehenry/vim-headerguard'
 "Plug 'wolfgangmehner/c-support'
 Plug 'Shougo/neocomplete.vim'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -18,6 +18,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'tikhomirov/vim-glsl'
 Plug 'kovetskiy/vim-bash'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/Tagbar'
 
 call plug#end()
 
@@ -130,3 +132,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 "" Markdown
 let g:vim_markdown_folding_disabled = 1
+
+"" TagBar
+nmap <F8> :TagbarToggle<CR>
+nmap <F7> :!ctags %
