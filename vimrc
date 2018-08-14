@@ -98,7 +98,6 @@ endfunction
 
 set hlsearch
 
-nnoremap ; :
 nnoremap J gt
 nnoremap K gT
 set clipboard=unnamedplus
