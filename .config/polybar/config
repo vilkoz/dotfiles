@@ -22,7 +22,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/example]
-monitor = ${env:MONITOR:DP2}
+monitor = ${env:MONITOR:HDMI3}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -324,8 +324,9 @@ animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 2
 warn-temperature = 60
+hwmon-path = /sys/class/thermal/thermal_zone2/temp
 
 format = <ramp> <label>
 format-underline = ${colors.primary}

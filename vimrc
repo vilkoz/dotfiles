@@ -20,6 +20,10 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'kovetskiy/vim-bash'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/Tagbar'
+Plug 'easymotion/vim-easymotion'
+Plug 'dag/vim-fish'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'shaneharper/vim-rtags'
 
 call plug#end()
 
@@ -66,8 +70,8 @@ autocmd BufNewFile,BufRead *.h :set filetype=c
 let g:ale_linters = {'c': 'gcc'}
 let g:ale_c_gcc_options = '-Wall -Wextra -Werror -I../includes -I./includes -I include'
 let g:ale_c_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes'
-let g:ale_cpp_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
-let g:ale_cpp_clangcheck_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
+let g:ale_cpp_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11 -I ~/large/new_android/frameworks/native/include -I ~/large/new_android/frameworks/base/libs/androidfw/include -I ~/large/new_android/frameworks/base/libs/services/include -I ~/large/new_android/frameworks/native/opengl/include'
+let g:ale_cpp_clangcheck_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11 -I ~/large/new_android/frameworks/native/include -I ~/large/new_android/frameworks/base/libs/androidfw/include -I ~/large/new_android/frameworks/base/libs/services/include -I ~/large/new_android/frameworks/native/opengl/include'
 ""}} ALE
 
 "" show invisibles
@@ -135,3 +139,29 @@ let g:vim_markdown_folding_disabled = 1
 "" TagBar
 nmap <F8> :TagbarToggle<CR>
 nmap <F7> :!ctags %
+
+let mapleader = " "
+
+nnoremap <leader>gn :GitGutterNextHunk<CR>
+nnoremap <leader>gN :GitGutterPrevHunk<CR>
+nnoremap <leader>gu :GitGutterUndoHunk<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bj :bn<CR>
+nnoremap <leader>bp :bn<CR>
+nnoremap <leader>bk :bn<CR>
+nnoremap <leader>bl :buffers<CR>
+nnoremap <leader>tn :tabnew 
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
+nnoremap <Leader>7 7gt
+nnoremap <Leader>8 8gt
+nnoremap <Leader>9 9gt
+nnoremap <Leader>0 10gt
+
+vnoremap <Leader>n "ny/<C-r>n<CR>gv
+
+set incsearch

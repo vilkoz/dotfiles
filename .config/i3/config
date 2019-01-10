@@ -136,9 +136,10 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
+bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
+bindsym $mod+Shift+e layout toggle splitv
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -189,7 +190,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -217,6 +218,9 @@ mode "resize" {
 
 #bindsym $mod+r mode "resize"
 
+for_window [title="MULTI"] move container to workspace 1
+for_window [title="Build Details"] move container to workspace 1
+for_window [title="MULTI Editor"] move container to workspace 1
 
 #bindsym $mod+b bar hidden_state toggle
 bindsym $mod+b exec --no-startup-id fish ~/.config/i3/start_polybar.fish
@@ -274,7 +278,8 @@ bindsym $mod+Pause mode "$mode_system"
 
 # set		$bg-color				#1a1a1e
 set		$bg-color				#10eadf
-set		$inactive-bg-color		#2a2a2e
+# set		$inactive-bg-color		#2a2a2e
+set		$inactive-bg-color		#000000
 set		$text-color				#f3f4f5
 #set		$inactive-text-color	#676e7d
 set		$inactive-text-color	#f3f4f5
