@@ -52,7 +52,7 @@ set path+=**
 set wildmenu
 set laststatus=2
 
-set cc=80
+"set cc=80
 
 " Man in vim
 runtime ftplugin/man.vim
@@ -76,7 +76,7 @@ let g:ale_cpp_clangcheck_options = '-Wall -Wextra -Werror -I../includes -I./incl
 
 "" show invisibles
 set listchars=eol:¬,tab:>_,trail:~,extends:>,precedes:<,space:␣
-set list
+"set list
 hi SpecialKey ctermfg=black
 hi NonText ctermfg=black
 hi EndOfBuffer ctermfg=black
@@ -138,7 +138,7 @@ let g:vim_markdown_folding_disabled = 1
 
 "" TagBar
 nmap <F8> :TagbarToggle<CR>
-nmap <F7> :!ctags %
+nmap <F7> :!ctags --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -R .
 
 let mapleader = " "
 
@@ -162,6 +162,22 @@ nnoremap <Leader>8 8gt
 nnoremap <Leader>9 9gt
 nnoremap <Leader>0 10gt
 
+" search selected fragment
 vnoremap <Leader>n "ny/<C-r>n<CR>gv
 
+nnoremap <Leader>co :copen<CR>
+nnoremap <Leader>cc :cclose<CR>
+
+vnoremap <Leader>gr "ny:grep -nr "<C-r>n" .
+
+nnoremap <Leader>sl :set list<CR>
+nnoremap <Leader>sL :set list!<CR>
+
+nnoremap <Leader>sp :set paste<CR>
+nnoremap <Leader>sP :set paste!<CR>
+
 set incsearch
+
+command -nargs=* Glg Git! lg <args>
+
+inoremap jj <Esc>
