@@ -1,4 +1,3 @@
-eval (python -m virtualfish compat_aliases)
 
 alias ls='ls --color=auto'
 alias lsd='ls -ld .*'
@@ -16,7 +15,7 @@ alias sevaadmvnc='ssh admin@192.168.0.132 -L 5900:loacalhost:5900 "x11vnc -noxda
 alias soundwire='/home/tor/Загрузки/SoundWireServer/SoundWireServer -p 59010 -verbose '
 alias minecraft='java -jar /home/tor/Загрузки/Minecraft.jar'
 alias weather='curl wttr.in'
-alias yt='yaourt --noconfirm'
+alias yt='auracle search'
 alias wakeupeva='ssh eva@192.168.0.132 "DISPLAY=:0 xfce4-terminal --fullscreen --hide-menubar --hide-borders -x python3 /home/eva/tox/Wake-up-Neo/wake.py -C green"'
 alias gcom='gcc -o new -Wextra -Werror -Wall'
 #BITCHX CONF
@@ -26,10 +25,11 @@ export IRC_HOST=coloringless.com
 export IRCNAME='bolgedor'
 export IRCSERVER=irc.freenode.net
 #stdheader conf
-export USER=vrybalko
-export MAIL=vrybalko@student.unit.ua
+#export USER=vrybalko
+#export MAIL=vrybalko@student.unit.ua
 # default gui browser for mutt
 export BROWSER=firefox
+export EDITOR=vim
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -58,12 +58,12 @@ alias git='hub'
 alias octave="octave --force-gui"
 alias sbcl="sbcl --noinform"
 
-alias adb="~/.buildozer/android/platform/android-sdk-20/platform-tools/adb"
 alias getsploit="~/Downloads/getsploit/getsploit.py"
 alias fpush="git add -u; git commit -m fast_push; git push"
 alias copy="tmux show-buffer | xclip -selection clipboard"
-function find_string
-	find ./ -type f -exec grep -H -n --color=auto $argv[1] \{\} \;
+function vimo
+	echo vim +(tmux show-buffer | cut -d ":" -f 2) (tmux show-buffer | cut -d ":" -f 1)
+	vim +(tmux show-buffer | cut -d ":" -f 2) (tmux show-buffer | cut -d ":" -f 1)
 end
-
-set -U fish_user_paths $fish_user_paths ~/.scripts
+#set -x GDK_DPI_SCALE 1.5
+#set -x QT_AUTO_SCREEN_SCALE_FACTOR 1
