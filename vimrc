@@ -16,11 +16,21 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'airblade/vim-gitgutter'
 Plug 'tikhomirov/vim-glsl'
+Plug 'lumiliet/vim-twig'
+Plug 'tpope/vim-fugitive'
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'joonty/vdebug'
+Plug 'posva/vim-vue'
+Plug 'dag/vim-fish'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'editorconfig/editorconfig-vim'
+
 
 call plug#end()
 
 map <C-x> :NERDTreeToggle<CR>
-map <f5> :make<CR>
+" map <f5> :make<CR>
 filetype plugin indent on
 set tabstop=4
 set noexpandtab
@@ -61,19 +71,21 @@ endif
 "let g:ale_linters = {'h': 'gcc', 'c': 'gcc'}
 " let g:ale_asm_gcc_options = '-Wall -fPIC -m64'
 let g:ale_c_gcc_options = '-Wall -Wextra -Werror -I../includes -I./includes -I include -I libft'
-let g:ale_c_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -I libft'
-" let g:ale_cpp_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
-" let g:ale_cpp_clangcheck_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
+let g:ale_c_clangtidy_options = '-Wall -Wextra -Werror -I../includes -I./includes -I include -I libft'
+let g:ale_c_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -I include -I libft'
+let g:ale_c_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -I include -I libft'
+let g:ale_cpp_clang_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
+let g:ale_cpp_clangcheck_options = '-Wall -Wextra -Werror -I../includes -I./includes -std=c++11'
 ""}} ALE
 
 "" show invisibles
-set listchars=eol:¬,tab:>_,trail:~,extends:>,precedes:<,space:␣
-set list
-hi SpecialKey ctermfg=black
-hi NonText ctermfg=black
-hi EndOfBuffer ctermfg=black
-hi SpecialKey guifg=black
-hi NonText guifg=black
+set listchars=eol:¬,tab:>_,trail:~,extends:>,precedes:<,space:.
+"set list!
+hi SpecialKey ctermfg=green
+hi NonText ctermfg=green
+hi EndOfBuffer ctermfg=green
+hi SpecialKey guifg=green
+hi NonText guifg=green
 hi EndOfBuffer guifg=black
 
 set backspace=2
@@ -93,6 +105,7 @@ function! Multiple_cursors_after()
 endfunction
 
 set hlsearch
+set incsearch
 
 " nnoremap ; :
 nnoremap J gt
@@ -128,3 +141,5 @@ let g:UltiSnipsEditSplit="vertical"
 
 "" Markdown
 let g:vim_markdown_folding_disabled = 1
+
+autocmd FileType javascript setlocal cc=120
