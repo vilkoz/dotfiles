@@ -1,7 +1,30 @@
 #!/bin/bash
 
-killall intel-virtual-output
-optirun true
-intel-virtual-output
-~/.screenlayout/test.sh
+function restart() {
+	sudo systemctl restart bumblebeed
+	notify-send "srestart bumblebeed"
+	if systemctl status bumblebeed | grep -q "code=exited"; then
+		notify-send "fail start bumblebeed (maybe monitor not connected)"
+		exit
+	fi
+	sleep 3
+	optirun true
+	notify-send "optirun true"
+}
 
+xrandr -q || exit 1
+
+if xrandr -q | grep " connected" | grep -q VIRTUAL1; then
+	echo OFF > /proc/acpi/nvhda || sudo make -C ~/git/nvhda load
+	echo ON > /proc/acpi/nvhda
+	notify-send "nvhda on off"
+	if xrandr --listactivemonitors | grep VIRTUAL1 | grep -o 2560/; then
+		~/.screenlayout/set_xrandr.sh
+	else
+		~/.screenlayout/wide_1080_extend.sh
+	fi
+	notify-send "xrandr"
+else
+	echo "no monitor connected"
+	exit 1
+fi
