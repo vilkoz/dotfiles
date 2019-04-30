@@ -2,3 +2,4 @@
 
 sudo ~/.scripts/connect_home_wifi
 ~/.scripts/enable_external_monitor
+setxkbmap -layout us,ru -option grp:win_space_toggle
