@@ -23,6 +23,7 @@ alert = #bd2c40
 
 [bar/example]
 ;monitor = ${env:MONITOR:eDP1}
+;monitor = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -103,6 +104,9 @@ label-mounted = %mountpoint%: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
+label-layout-underline = ${colors.primary}
+format-prefix-underline = ${colors.primary}
+
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -163,13 +167,13 @@ format = <label> <bar>
 label = BL
 
 bar-width = 10
-bar-indicator = █
+bar-indicator = #
 bar-indicator-foreground = #ff
 bar-indicator-font = 5
-bar-fill = █
+bar-fill = #
 bar-fill-font = 5
 bar-fill-foreground = ${colors.primary}
-bar-empty = █
+bar-empty = _
 bar-empty-font = 5
 bar-empty-foreground = #44
 format-underline = ${colors.primary}
@@ -204,7 +208,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors.primary}
-label-connected = %essid%
+label-connected = %essid% %local_ip% %downspeed:9%
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
@@ -227,7 +231,7 @@ interval = 3.0
 format-connected-underline = ${colors.primary}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected = %local_ip% %downspeed:9%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -284,12 +288,12 @@ bar-volume-foreground-0 = ${colors.primary}
 bar-volume-foreground-1 = ${colors.primary}
 bar-volume-foreground-2 = ${colors.primary}
 bar-volume-foreground-3 = ${colors.primary}
-bar-volume-indicator = █
+bar-volume-indicator = #
 bar-volume-indicator-font = 5
 bar-volume-indicator-foreground = #fff
-bar-volume-fill = █
+bar-volume-fill = #
 bar-volume-fill-font = 5
-bar-volume-empty = █
+bar-volume-empty = _
 bar-volume-empty-font = 5
 bar-volume-empty-foreground = #44
 
@@ -389,28 +393,28 @@ label = CPU
 label-font = 3
 label-foreground = #99
 
-ramp-coreload-0 = ▁
+ramp-coreload-0 = _
 ramp-coreload-0-font = 2
 ramp-coreload-0-foreground = ${colors.primary}
-ramp-coreload-1 = ▂
+ramp-coreload-1 = _
 ramp-coreload-1-font = 2
 ramp-coreload-1-foreground = ${colors.primary}
-ramp-coreload-2 = ▃
+ramp-coreload-2 = =
 ramp-coreload-2-font = 2
 ramp-coreload-2-foreground = ${colors.primary}
-ramp-coreload-3 = ▄
+ramp-coreload-3 = =
 ramp-coreload-3-font = 2
 ramp-coreload-3-foreground = ${colors.primary}
-ramp-coreload-4 = ▅
+ramp-coreload-4 = =
 ramp-coreload-4-font = 2
 ramp-coreload-4-foreground = ${colors.foreground-alt}
-ramp-coreload-5 = ▆
+ramp-coreload-5 = #
 ramp-coreload-5-font = 2
 ramp-coreload-5-foreground = ${colors.foreground-alt}
-ramp-coreload-6 = ▇
+ramp-coreload-6 = #
 ramp-coreload-6-font = 2
 ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7 = █
+ramp-coreload-7 = $
 ramp-coreload-7-font = 2
 ramp-coreload-7-foreground = #ff5555
 format-underline = ${colors.primary}
@@ -430,12 +434,12 @@ bar-used-foreground-0 = ${colors.primary}
 bar-used-foreground-1 = ${colors.primary}
 bar-used-foreground-2 = ${colors.primary}
 bar-used-foreground-3 = ${colors.primary}
-bar-used-indicator = █
+bar-used-indicator = #
 bar-used-indicator-font = 5
 bar-used-indicator-foreground = #fff
-bar-used-fill = █
+bar-used-fill = #
 bar-used-fill-font = 5
-bar-used-empty = █
+bar-used-empty = _
 bar-used-empty-font = 5
 bar-used-empty-foreground = #44
 format-underline = ${colors.primary}
