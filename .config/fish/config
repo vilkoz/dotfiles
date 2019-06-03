@@ -1,0 +1,21 @@
+alias pac="sudo apt install"
+alias pacr="sudo apt remove"
+alias pacu="sudo sh -c 'apt update; apt upgrade'"
+alias rr="ranger"
+alias g="grep -nr (tmux show-buffer)"
+alias ll="ls -GghB --group-directories-first"
+setenv EDITOR '/usr/bin/vim'
+
+function ranger-cd
+	set tempfile (mktemp -t tmp.XXXXXXX)
+	echo "tempfile: $tempfile"
+	ranger --choosedir="$tempfile"
+	if test -e "$tempfile"; and test (cat -- "$tempfile") != "$PWD"
+		echo "cd "(cat "$tempfile")
+		cd (cat "$tempfile")
+	end
+	rm -f -- "$tempfile"
+	echo -n (clear | string replace \e\[3J ""); commandline -f repaint 
+end
+
+bind -M insert \co 'ranger-cd'
