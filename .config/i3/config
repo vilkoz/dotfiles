@@ -42,7 +42,10 @@ set $lockscreen ~/.scripts/lockscreen.sh
 exec --no-startup-id ~/.config/i3/start_polybar.fish
 exec --no-startup-id ~/.config/i3/rand_bg.fish
 exec --no-startup-id nm-applet
-exec --no-startup-id fish ~/.config/i3/startup_load.fish
+exec --no-startup-id compton
+exec --no-startup-id dropbox
+exec --no-startup-id telegram-desktop
+exec --no-startup-id clipit
 
 #exec --class=termW1 terminator
 #assign [class=termW1] 1
