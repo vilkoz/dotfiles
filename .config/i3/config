@@ -26,7 +26,7 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-set $term terminator
+set $term termite
 set $lockscreen ~/.scripts/lockscreen.sh
 
 #Needed for i3-gaps
