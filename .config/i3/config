@@ -74,8 +74,7 @@ bindsym $mod+x kill
 bindsym  Ctrl+Shift+Delete exec $lockscreen
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-bindsym $mod+q exec qutebrowser
+bindsym $mod+d exec dmenu_run -nb '#010101'
 bindsym $mod+r 		exec $term -e ranger
 #bindsym $mod+t 		exec $term -e tmux
 bindsym $mod+i 		exec $term -e htop
