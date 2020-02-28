@@ -1,0 +1,7 @@
+#!/bin/bash
+day=$(timedatectl | grep "Local" | cut -d ":" -f2 | cut -d " " -f3 | cut -d "-" -f3)
+month=$(timedatectl | grep "Local" | cut -d ":" -f2 | cut -d " " -f3 | cut -d "-" -f2)
+year=$(timedatectl | grep "Local" | cut -d ":" -f2 | cut -d " " -f3 | cut -d "-" -f1)
+time=$(timedatectl | grep "Local" | awk '{print $5}' | cut -d ":" -f1,2)
+
+echo "$day-$month-$year $time"

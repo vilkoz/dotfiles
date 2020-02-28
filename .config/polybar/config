@@ -58,7 +58,7 @@ font-2 = fontawesome:pixelsize=10;1
 ;modules-left = bspwm i3
 modules-left = i3
 modules-center = mpd xwindow
-modules-right = xkeyboard filesystem xbacklight volume memory cpu wlan eth battery temperature date powermenu
+modules-right = xkeyboard filesystem xbacklight volume disk_io memory cpu wlan eth battery temperature clickable_date powermenu
 
 tray-position = right
 tray-padding = 5
@@ -369,6 +369,27 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+[module/disk_io]
+type = internal/disk_io
+interval = 1
+; If you want to see I/O only of specific devices, you should provide names
+; of thouse devices, otherwise the sum of all disks' I/O speeds will be
+; displayed.
+monitored-disks-0 = sda
+monitored-disks-1 = nvme0n1
+format = <label>
+;format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = R: %speed_read% W: %speed_write%
+; You can enbale indicators for read and write to disk with following:
+; Icons for read/write.
+;indicator-read = R
+;indicator-write = W
+; Colors for displaying if read/write is performed at the moment.
+;toggle-on-foreground = ${colors.foreground}
+;toggle-off-foreground = ${colors.foreground-alt}
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -440,4 +461,14 @@ bar-used-empty = █
 bar-used-empty-font = 5
 bar-used-empty-foreground = #44
 format-underline = ${colors.primary}
-; vim:ft=dosini
+
+[module/clickable_date]
+type = custom/script
+exec = ~/.config/polybar/clickable_date
+click-right = notify-send 'click'
+; click-left = termite -e 'watch ncal' --class 'clickable_date_window'" &
+click-left = termite -e 'watch ncal' -t 'calendar' --class 'clickable_date_window'
+interval = 60
+format-underline = ${colors.primary}
+
+; vim: set ft=dosini

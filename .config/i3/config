@@ -193,6 +193,10 @@ for_window [class="qutebrowser"] move to workspace 2
 for_window [class="Telegram"] move to workspace 3
 for_window [class="Keepass"] move to workspace 10
 
+for_window [class="clickable_date_window"] floating toggle
+for_window [class="clickable_date_window"] resize set 150px 200px
+for_window [class="clickable_date_window"] move position mouse
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
