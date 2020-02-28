@@ -79,6 +79,7 @@ bindsym $mod+r 		exec $term -e ranger
 #bindsym $mod+t 		exec $term -e tmux
 bindsym $mod+i 		exec $term -e htop
 bindsym $mod+p 		exec $term -e "python3 -m IPython"
+bindsym $mod+F2		exec firefox
 
 # resize
 
