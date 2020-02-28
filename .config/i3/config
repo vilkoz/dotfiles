@@ -71,7 +71,7 @@ bindsym Print exec gnome-screenshot
 bindsym $mod+x kill
 
 # lock 
-bindsym  Ctrl+Shift+Delete workspace 1; workspace 8; workspace 2; workspace 9; exec $lockscreen
+bindsym  Ctrl+Shift+Delete exec $lockscreen
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
