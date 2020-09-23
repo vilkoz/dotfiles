@@ -25,7 +25,7 @@ Plug 'posva/vim-vue'
 Plug 'dag/vim-fish'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'editorconfig/editorconfig-vim'
-
+Plug 'JamshedVesuna/vim-markdown-preview'
 
 call plug#end()
 
@@ -143,3 +143,6 @@ let g:UltiSnipsEditSplit="vertical"
 let g:vim_markdown_folding_disabled = 1
 
 autocmd FileType javascript setlocal cc=120
+
+
+set novb t_vb=
