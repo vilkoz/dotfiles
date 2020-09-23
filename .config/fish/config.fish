@@ -65,5 +65,5 @@ function vimo
 	echo vim +(tmux show-buffer | cut -d ":" -f 2) (tmux show-buffer | cut -d ":" -f 1)
 	vim +(tmux show-buffer | cut -d ":" -f 2) (tmux show-buffer | cut -d ":" -f 1)
 end
-#set -x GDK_DPI_SCALE 1.5
-#set -x QT_AUTO_SCREEN_SCALE_FACTOR 1
+set -x GDK_DPI_SCALE 1.5
+set -x QT_AUTO_SCREEN_SCALE_FACTOR 1
