@@ -1,0 +1,10 @@
+#!/bin/bash
+xrandr --newmode "1920x1080_60.00"  172.80  1920 2040 2248 2576  1080 1081 1084 1118  -HSync +Vsync
+echo added new mode
+xrandr --addmode VIRTUAL2 "1920x1080_60.00"
+echo added mode to VIRTUAL2
+xrandr --output VIRTUAL2 --mode "1920x1080_60.00" --right-of eDP1
+echo run VIRTUAL2 with new mode right of eDP1
+echo starting vnc server
+x11vnc -rfbport 5901 -clip 1920x1080+1920+0
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "$@" >> ~/.series_track
+
+/usr/bin/mpv $@

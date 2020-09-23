@@ -1,0 +1,62 @@
+#!/bin/bash
+
+MODE=$@
+
+EXTERNAL_DEVICES=("Razer  Razer Abyssus" "Razer Razer Arctosa")
+INTERNAL_DEVICES=("ETPS/2 Elantech Touchpad" "AT Translated Set 2 keyboard")
+MODE_FILE="/tmp/game_mode"
+
+if [ "$MODE" = "" ]; then
+	if [ -f $MODE_FILE ]; then
+		rm -f $MODE_FILE
+		echo have status file
+		MODE="disable"
+	else
+		echo no status file
+		touch $MODE_FILE
+		MODE="enable"
+	fi
+fi
+
+case "$MODE" in
+	d*)
+		echo disable game mode
+		echo enabling external devices to use with DISPLAY=:0
+		MODE="enable"
+		;;
+	e*)
+		echo enable game mode
+		echo disabling external devices to use with DISPLAY=:0
+		MODE="disable"
+		;;
+	*)
+		echo WRONG OPERATION MODE
+		echo Allowed modes:
+		echo    disable
+		echo    enable
+		exit 1
+		;;
+esac
+
+if [ "$MODE" = "disable" ]; then
+	INTERNAL_MODE="enable"
+else
+	INTERNAL_MODE="disable"
+fi
+
+for ((i = 0; i < ${#EXTERNAL_DEVICES[@]}; i++))
+do
+	    echo "$MODE" "${EXTERNAL_DEVICES[$i]}"
+		name="${EXTERNAL_DEVICES[$i]}"
+		xinput $MODE "$name"
+done
+
+for ((i = 0; i < ${#INTERNAL_DEVICES[@]}; i++))
+do
+	    echo "DISPLAY=:8" "$MODE" "${INTERNAL_DEVICES[$i]}"
+		name="${INTERNAL_DEVICES[$i]}"
+		DISPLAY=:8 xinput $MODE "$name"
+done
+
+setxkbmap -layout us,ru -option grp:win_space_toggle
+xset r rate 200 30

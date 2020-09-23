@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if xrandr -q | grep " connected" | grep -q VIRTUAL1; then
+	echo OFF > /proc/acpi/nvhda
+	sudo systemctl restart bumblebeed
+	~/.screenlayout/default.sh
+fi
