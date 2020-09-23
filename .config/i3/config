@@ -27,13 +27,13 @@ font ProggySquareTT:Regular 11
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-set $term alacritty
+set $term termite
 set $lockscreen fish ~/.config/i3/lockscreen.fish
 
 #Needed for i3-gaps
 hide_edge_borders both
 for_window [class="^.*"] border pixel 3
-set $gapsinner 10
+set $gapsinner 0
 set $gapsouter 0
 gaps inner $gapsinner
 gaps outer $gapsouter
